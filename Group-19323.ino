@@ -1,11 +1,11 @@
 #include <DHT.h>
 
-// Constants for PIR sensor
-int pirPin = 2;               // Pin connected to PIR sensor
+// Constants for IR sensor
+int pirPin = 2;               // Pin connected to IR sensor
 int ledPin = 12;              // Pin connected to LED (optional)
 int peopleCount = 0;          // Variable to store the number of people
-int motionState = LOW;        // Current PIR state
-int previousMotionState = LOW;  // Previous PIR state
+int motionState = LOW;        // Current IR state
+int previousMotionState = LOW;  // Previous IR state
 
 // Constants for DHT11 sensor
 #define DHTPIN 4              // Pin connected to DHT11 data pin (updated)
@@ -21,7 +21,7 @@ unsigned long previousTempTime = 0;  // Timer for temperature readings
 const long tempInterval = 5000;      // Temperature reading interval (5 seconds)
 
 void setup() {
-  // Initialize pins for PIR, LED, and buzzer
+  // Initialize pins for IR, LED, and buzzer
   pinMode(pirPin, INPUT);
   pinMode(ledPin, OUTPUT);
   pinMode(buzzerPin, OUTPUT);
@@ -54,7 +54,7 @@ void loop() {
     }
   }
 
-  // Read motion data from PIR sensor
+  // Read motion data from IR sensor
   motionState = digitalRead(pirPin);
 
   // If motion is detected
